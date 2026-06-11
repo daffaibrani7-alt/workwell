@@ -34,18 +34,13 @@ class MenuCard extends StatelessWidget {
                   color: AppColors.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Icon(
-                  icon,
-                  color: AppColors.primary,
-                ),
+                child: Icon(icon, color: AppColors.primary),
               ),
               const SizedBox(height: 12),
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                ),
+                style: const TextStyle(fontWeight: FontWeight.w700),
               ),
             ],
           ),

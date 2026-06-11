@@ -13,9 +13,17 @@ class DashboardScreen extends StatelessWidget {
       _MenuItem('Aktivitas', Icons.task_alt_rounded, AppRoutes.activities),
       _MenuItem('Cuti', Icons.event_available_rounded, null),
       _MenuItem('Laporan', Icons.description_rounded, null),
-      _MenuItem('Notifikasi', Icons.notifications_rounded, AppRoutes.notifications),
+      _MenuItem(
+        'Notifikasi',
+        Icons.notifications_rounded,
+        AppRoutes.notifications,
+      ),
       _MenuItem('Profil', Icons.person_rounded, AppRoutes.profile),
-      _MenuItem('Booking Ruangan', Icons.meeting_room_rounded, AppRoutes.meetingRooms),
+      _MenuItem(
+        'Booking Ruangan',
+        Icons.meeting_room_rounded,
+        AppRoutes.meetingRooms,
+      ),
     ];
 
     return Scaffold(
@@ -40,10 +48,7 @@ class DashboardScreen extends StatelessWidget {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [
-                  AppColors.primary,
-                  AppColors.primaryLight,
-                ],
+                colors: [AppColors.primary, AppColors.primaryLight],
               ),
               borderRadius: BorderRadius.circular(26),
             ),
@@ -61,10 +66,7 @@ class DashboardScreen extends StatelessWidget {
                 SizedBox(height: 8),
                 Text(
                   'Semoga produktif hari ini.',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 15,
-                  ),
+                  style: TextStyle(color: Colors.white70, fontSize: 15),
                 ),
               ],
             ),

@@ -50,10 +50,7 @@ class MeetingRoomBookScreen extends StatelessWidget {
           const SizedBox(height: 6),
           const Text(
             'Saring menurut waktu, status, kepemilikan, atau hybrid.',
-            style: TextStyle(
-              color: AppColors.textSecondary,
-              height: 1.4,
-            ),
+            style: TextStyle(color: AppColors.textSecondary, height: 1.4),
           ),
           const SizedBox(height: 16),
           Wrap(
@@ -78,9 +75,7 @@ class MeetingRoomBookScreen extends StatelessWidget {
 class _FilterChip extends StatelessWidget {
   final String label;
 
-  const _FilterChip({
-    required this.label,
-  });
+  const _FilterChip({required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -88,9 +83,7 @@ class _FilterChip extends StatelessWidget {
       label: Text(label),
       backgroundColor: Colors.white,
       side: BorderSide.none,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(999),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
     );
   }
 }
@@ -116,9 +109,7 @@ class _ScheduleItem {
 class _ScheduleCard extends StatelessWidget {
   final _ScheduleItem item;
 
-  const _ScheduleCard({
-    required this.item,
-  });
+  const _ScheduleCard({required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -134,10 +125,7 @@ class _ScheduleCard extends StatelessWidget {
         children: [
           Text(
             item.title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 16,
-            ),
+            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
           ),
           const SizedBox(height: 8),
           Text(
@@ -167,9 +155,7 @@ class _ScheduleCard extends StatelessWidget {
 class _Badge extends StatelessWidget {
   final String label;
 
-  const _Badge({
-    required this.label,
-  });
+  const _Badge({required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -182,9 +168,7 @@ class _Badge extends StatelessWidget {
         fontSize: 12,
       ),
       side: BorderSide.none,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(999),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
     );
   }
 }

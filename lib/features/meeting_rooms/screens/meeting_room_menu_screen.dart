@@ -14,11 +14,7 @@ class MeetingRoomMenuScreen extends StatefulWidget {
 class _MeetingRoomMenuScreenState extends State<MeetingRoomMenuScreen> {
   int selectedTab = 0;
 
-  final tabs = const [
-    'Room',
-    'Riwayat',
-    'Ketersediaan',
-  ];
+  final tabs = const ['Room', 'Riwayat', 'Ketersediaan'];
 
   final rooms = const [
     MeetingRoom(
@@ -257,7 +253,8 @@ class _TimelineCard extends StatelessWidget {
           const SizedBox(height: 16),
           Row(
             children: List.generate(16, (index) {
-              final busy = index == 2 || index == 3 || index == 9 || index == 10;
+              final busy =
+                  index == 2 || index == 3 || index == 9 || index == 10;
               return Expanded(
                 child: Container(
                   height: index == 9 ? 50 : 38,
@@ -279,7 +276,11 @@ class _TimelineCard extends StatelessWidget {
               SizedBox(width: 14),
               _LegendDot(color: Color(0xFFD1D5DB), label: 'Busy'),
               Spacer(),
-              Icon(Icons.verified_user_outlined, size: 16, color: AppColors.warning),
+              Icon(
+                Icons.verified_user_outlined,
+                size: 16,
+                color: AppColors.warning,
+              ),
               SizedBox(width: 4),
               Text(
                 'Butuh approval',
@@ -301,16 +302,17 @@ class _LegendDot extends StatelessWidget {
   final Color color;
   final String label;
 
-  const _LegendDot({
-    required this.color,
-    required this.label,
-  });
+  const _LegendDot({required this.color, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(width: 9, height: 9, decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
+        Container(
+          width: 9,
+          height: 9,
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+        ),
         const SizedBox(width: 5),
         Text(
           label,
@@ -379,10 +381,7 @@ class _RoomCard extends StatelessWidget {
                               AppColors.primary.withValues(alpha: 0.95),
                               AppColors.primaryLight.withValues(alpha: 0.72),
                             ]
-                          : [
-                              const Color(0xFF6B7280),
-                              const Color(0xFF9CA3AF),
-                            ],
+                          : [const Color(0xFF6B7280), const Color(0xFF9CA3AF)],
                     ),
                   ),
                   child: Stack(
@@ -540,9 +539,15 @@ class _HistoryTab extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(item[0], style: const TextStyle(fontWeight: FontWeight.w900)),
+                    Text(
+                      item[0],
+                      style: const TextStyle(fontWeight: FontWeight.w900),
+                    ),
                     const SizedBox(height: 4),
-                    Text(item[1], style: const TextStyle(color: AppColors.textSecondary)),
+                    Text(
+                      item[1],
+                      style: const TextStyle(color: AppColors.textSecondary),
+                    ),
                   ],
                 ),
               ),
@@ -659,9 +664,7 @@ class _AvailabilityDateHeader extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(36),
-        border: Border.all(
-          color: const Color(0xFFE8ECF3),
-        ),
+        border: Border.all(color: const Color(0xFFE8ECF3)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.045),
@@ -733,10 +736,7 @@ class _AvailabilityDateHeader extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 16,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
             decoration: BoxDecoration(
               color: const Color(0xFFFBFCFE),
               borderRadius: BorderRadius.circular(32),
@@ -758,7 +758,9 @@ class _AvailabilityDateHeader extends StatelessWidget {
                       boxShadow: selected
                           ? [
                               BoxShadow(
-                                color: AppColors.primary.withValues(alpha: 0.24),
+                                color: AppColors.primary.withValues(
+                                  alpha: 0.24,
+                                ),
                                 blurRadius: 14,
                                 offset: const Offset(0, 8),
                               ),
@@ -1005,16 +1007,14 @@ class _DarkInfoRow extends StatelessWidget {
   final String title;
   final String? subtitle;
 
-  const _DarkInfoRow({
-    required this.icon,
-    required this.title,
-    this.subtitle,
-  });
+  const _DarkInfoRow({required this.icon, required this.title, this.subtitle});
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: subtitle == null ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+      crossAxisAlignment: subtitle == null
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
       children: [
         Icon(icon, size: 20, color: const Color(0xFF8B9099)),
         const SizedBox(width: 12),

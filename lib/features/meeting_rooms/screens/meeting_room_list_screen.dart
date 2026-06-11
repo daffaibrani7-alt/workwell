@@ -41,9 +41,7 @@ class MeetingRoomListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Booking Ruangan'),
-      ),
+      appBar: AppBar(title: const Text('Booking Ruangan')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -56,11 +54,7 @@ class MeetingRoomListScreen extends StatelessWidget {
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.meeting_room_rounded,
-                  color: Colors.white,
-                  size: 38,
-                ),
+                Icon(Icons.meeting_room_rounded, color: Colors.white, size: 38),
                 SizedBox(height: 14),
                 Text(
                   'Pilih Ruangan Rapat',
@@ -73,10 +67,7 @@ class MeetingRoomListScreen extends StatelessWidget {
                 SizedBox(height: 6),
                 Text(
                   'Lihat ketersediaan ruangan dan ajukan jadwal booking rapat.',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    height: 1.4,
-                  ),
+                  style: TextStyle(color: Colors.white70, height: 1.4),
                 ),
               ],
             ),
@@ -101,9 +92,7 @@ class MeetingRoomListScreen extends StatelessWidget {
 class _RoomCard extends StatelessWidget {
   final MeetingRoom room;
 
-  const _RoomCard({
-    required this.room,
-  });
+  const _RoomCard({required this.room});
 
   @override
   Widget build(BuildContext context) {
@@ -119,10 +108,7 @@ class _RoomCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(
-                Icons.business_rounded,
-                color: AppColors.primary,
-              ),
+              const Icon(Icons.business_rounded, color: AppColors.primary),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
@@ -140,10 +126,7 @@ class _RoomCard extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             room.description,
-            style: const TextStyle(
-              color: AppColors.textSecondary,
-              height: 1.4,
-            ),
+            style: const TextStyle(color: AppColors.textSecondary, height: 1.4),
           ),
           const SizedBox(height: 14),
           Row(
@@ -157,9 +140,7 @@ class _RoomCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   room.location,
-                  style: const TextStyle(
-                    color: AppColors.textSecondary,
-                  ),
+                  style: const TextStyle(color: AppColors.textSecondary),
                 ),
               ),
             ],
@@ -175,9 +156,7 @@ class _RoomCard extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 'Kapasitas ${room.capacity} orang',
-                style: const TextStyle(
-                  color: AppColors.textSecondary,
-                ),
+                style: const TextStyle(color: AppColors.textSecondary),
               ),
             ],
           ),
@@ -206,7 +185,9 @@ class _RoomCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              child: Text(room.isAvailable ? 'Booking Ruangan' : 'Tidak Tersedia'),
+              child: Text(
+                room.isAvailable ? 'Booking Ruangan' : 'Tidak Tersedia',
+              ),
             ),
           ),
         ],
@@ -218,17 +199,12 @@ class _RoomCard extends StatelessWidget {
 class _StatusBadge extends StatelessWidget {
   final bool isAvailable;
 
-  const _StatusBadge({
-    required this.isAvailable,
-  });
+  const _StatusBadge({required this.isAvailable});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 6,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         color: isAvailable
             ? AppColors.success.withValues(alpha: 0.12)

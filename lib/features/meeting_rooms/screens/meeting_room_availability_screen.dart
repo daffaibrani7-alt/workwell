@@ -59,9 +59,7 @@ class MeetingRoomAvailabilityScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cek Ketersediaan'),
-      ),
+      appBar: AppBar(title: const Text('Cek Ketersediaan')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -76,10 +74,7 @@ class MeetingRoomAvailabilityScreen extends StatelessWidget {
           const SizedBox(height: 8),
           const Text(
             'Pilih tanggal dan tampilan daftar atau kalender untuk melihat jadwal ruangan.',
-            style: TextStyle(
-              color: AppColors.textSecondary,
-              height: 1.4,
-            ),
+            style: TextStyle(color: AppColors.textSecondary, height: 1.4),
           ),
           const SizedBox(height: 22),
           const _FilterSection(),
@@ -285,9 +280,7 @@ class _ReservationItem {
 class _RoomScheduleCard extends StatelessWidget {
   final _RoomSchedule schedule;
 
-  const _RoomScheduleCard({
-    required this.schedule,
-  });
+  const _RoomScheduleCard({required this.schedule});
 
   @override
   Widget build(BuildContext context) {
@@ -297,9 +290,7 @@ class _RoomScheduleCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: const Color(0xFFE5E7EB),
-        ),
+        border: Border.all(color: const Color(0xFFE5E7EB)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -351,9 +342,7 @@ class _RoomScheduleCard extends StatelessWidget {
 class _RoomNameBadge extends StatelessWidget {
   final String name;
 
-  const _RoomNameBadge({
-    required this.name,
-  });
+  const _RoomNameBadge({required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -392,9 +381,7 @@ class _RoomNameBadge extends StatelessWidget {
 class _ReservationCard extends StatelessWidget {
   final _ReservationItem item;
 
-  const _ReservationCard({
-    required this.item,
-  });
+  const _ReservationCard({required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -404,9 +391,7 @@ class _ReservationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFF9FAFB),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: const Color(0xFFE5E7EB),
-        ),
+        border: Border.all(color: const Color(0xFFE5E7EB)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -428,20 +413,14 @@ class _ReservationCard extends StatelessWidget {
             subtitle: item.time,
           ),
           const SizedBox(height: 12),
-          _InfoRow(
-            icon: Icons.person_outline_rounded,
-            title: item.organizer,
-          ),
+          _InfoRow(icon: Icons.person_outline_rounded, title: item.organizer),
           const SizedBox(height: 12),
           _InfoRow(
             icon: Icons.location_on_outlined,
             title: '${item.room} • ${item.roomLocation}',
           ),
           const SizedBox(height: 12),
-          _InfoRow(
-            icon: Icons.apartment_rounded,
-            title: item.unit,
-          ),
+          _InfoRow(icon: Icons.apartment_rounded, title: item.unit),
         ],
       ),
     );
@@ -451,9 +430,7 @@ class _ReservationCard extends StatelessWidget {
 class _TypeBadge extends StatelessWidget {
   final String label;
 
-  const _TypeBadge({
-    required this.label,
-  });
+  const _TypeBadge({required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -500,17 +477,14 @@ class _InfoRow extends StatelessWidget {
   final String title;
   final String? subtitle;
 
-  const _InfoRow({
-    required this.icon,
-    required this.title,
-    this.subtitle,
-  });
+  const _InfoRow({required this.icon, required this.title, this.subtitle});
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment:
-          subtitle == null ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+      crossAxisAlignment: subtitle == null
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
       children: [
         Icon(icon, size: 19, color: AppColors.textSecondary),
         const SizedBox(width: 10),
@@ -536,9 +510,7 @@ class _InfoRow extends StatelessWidget {
                     const SizedBox(height: 3),
                     Text(
                       subtitle!,
-                      style: const TextStyle(
-                        color: AppColors.textSecondary,
-                      ),
+                      style: const TextStyle(color: AppColors.textSecondary),
                     ),
                   ],
                 ),

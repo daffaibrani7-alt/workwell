@@ -6,10 +6,7 @@ import '../models/meeting_room_model.dart';
 class MeetingRoomBookingScreen extends StatefulWidget {
   final MeetingRoom room;
 
-  const MeetingRoomBookingScreen({
-    super.key,
-    required this.room,
-  });
+  const MeetingRoomBookingScreen({super.key, required this.room});
 
   @override
   State<MeetingRoomBookingScreen> createState() =>
@@ -65,9 +62,7 @@ class _MeetingRoomBookingScreenState extends State<MeetingRoomBookingScreen> {
     }
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Booking ruangan berhasil diajukan.'),
-      ),
+      const SnackBar(content: Text('Booking ruangan berhasil diajukan.')),
     );
 
     Navigator.pop(context);
@@ -83,9 +78,7 @@ class _MeetingRoomBookingScreenState extends State<MeetingRoomBookingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Form Booking'),
-      ),
+      appBar: AppBar(title: const Text('Form Booking')),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -115,10 +108,7 @@ class _MeetingRoomBookingScreenState extends State<MeetingRoomBookingScreen> {
                 const SizedBox(height: 6),
                 Text(
                   '${widget.room.location} • Kapasitas ${widget.room.capacity} orang',
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    height: 1.4,
-                  ),
+                  style: const TextStyle(color: Colors.white70, height: 1.4),
                 ),
               ],
             ),
@@ -130,10 +120,7 @@ class _MeetingRoomBookingScreenState extends State<MeetingRoomBookingScreen> {
             onTap: _pickDate,
             borderRadius: BorderRadius.circular(16),
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 18,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
@@ -207,9 +194,7 @@ class _MeetingRoomBookingScreenState extends State<MeetingRoomBookingScreen> {
 class _InputLabel extends StatelessWidget {
   final String label;
 
-  const _InputLabel({
-    required this.label,
-  });
+  const _InputLabel({required this.label});
 
   @override
   Widget build(BuildContext context) {

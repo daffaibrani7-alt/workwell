@@ -95,10 +95,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   child: const Text(
                     'Masuk',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),
               ),
